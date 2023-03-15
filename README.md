@@ -64,10 +64,17 @@ developing your own process.
 
   - How I debugged:
 
+  On the console, there was an internal server error. I checked on the Rails logs to find the source of error and fixed the line specified in the log.
+
 - Update the number of likes for a toy
 
   - How I debugged:
 
+  On the console, there was a SyntaxError: Unexpected end of JSON input. I checked on the Networks tab to find the source of error. The status was 204 but there was no Content. Also on the rails server terminal, status was the same. Therefore, nothing was being rendered. Added the render statement in the update method.
+
 - Donate a toy to Goodwill (and delete it from our database)
 
   - How I debugged:
+
+  On the console, the error message was DELETE 404 not found, meaning the route was not defined.
+  On the config/routes.rb, I added the :destroy to the routes.
